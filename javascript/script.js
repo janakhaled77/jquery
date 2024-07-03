@@ -17,58 +17,38 @@ $(document).ready(function() {
             infoBox.slideDown();
         }
     });
-});
-$(document).ready(function() {
-  
     $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
         var target = $($(this).attr('href'));
-        if (target.length) {
-            event.preventDefault();
+        if (target.length) { 
             $('html, body').animate({
                 scrollTop: target.offset().top
-            }, 500);
+            }, 100);
         }
     });
- 
 
-    $(function(){
-        var days    = parseInt( $('.days').html() );
-        var hours   = parseInt( $('.hours').html() );
-        var minutes = parseInt( $('.minutes').html() );
-        var seconds = parseInt( $('.seconds').html() );
-        var minutesWrap = 0; 
-        var hoursWrap = 0; 
-        var daysWrap= days; 
-        var hoursRem = hours;
-        var timer = seconds; 
-        var counter =seconds;
-        function countOrdersRemainingTime(){
-            var id = setTimeout(countOrdersRemainingTime, 1000); 
-            if(timer < 0){
-                minutesWrap ++; 
-                timer = 59;
+
+    $(document).ready(function() {
+        var countDownDate = new Date("Dec 31, 2029 23:59:59").getTime();
+        var countdownFunction = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            $('#days').html(days + "d");
+            $('#hours').html(hours + "h");
+            $('#minutes').html(minutes + "m");
+            $('#seconds').html(seconds + "s");
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                $('#days').html("0d");
+                $('#hours').html("0h");
+                $('#minutes').html("0m");
+                $('#seconds').html("0s");
             }
-            var minRem = minutes - minutesWrap; 
-            if( minRem == -1 ){
-                hoursWrap + 1;
-                minRem = 59;
-                var hoursRem = hours - 1;
-            }
-            if(days == 0 && hours == 0 && minutes == 0 && seconds == 0){
-                clearTimeout(id);
-            }
-
-            $('.seconds').html(timer);
-            $('.minutes').html(minRem);
-            $('.hours').html(hoursRem);
-
-
-            timer --; 
-        }
-
-        countOrdersRemainingTime();
-
-
+        }, 1000);
     });
 
     var maxChars = 100;
