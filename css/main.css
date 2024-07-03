@@ -12,6 +12,10 @@ body{
     text-align: center;
     height: 90vh;
 }
+.bg-grey{
+    background-color: rgb(169, 169, 169);
+    color: #1a1a1a;
+}
 .layer{
     background-color:rgba(157, 4, 4, 0.653);
     display: flex;
@@ -58,8 +62,8 @@ body{
 }
 
 .singer-box {
-    background-color: #e9476a;
-    border: 1px solid #e9476a;
+    background-color: #ee7690;
+    border: 1px solid #ee7690;
     font-size: 25px;
     cursor: pointer;
     font-weight: 600;
@@ -71,11 +75,9 @@ body{
     font-weight: 400;
 }
 .numbers{
-    background-image: url(../imgs/join\ us.jpg);
+    background-image: url(../imgs/joinnn.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-
     .layer{
         padding-top:100px;
         padding-bottom:100px;
