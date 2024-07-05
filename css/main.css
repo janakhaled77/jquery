@@ -23,21 +23,12 @@ body{
     align-items: center;
     height: 100%;
 }
-.header-content{
-    color: rgb(255, 255, 255);
-    height: auto;
-}
+
 .sidebar {
-    height: 100%;
-    width: 0;
     position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     background-color: #333;
-    overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+
 }
 .sidebar a {
     padding: 8px 8px 8px 32px;
@@ -50,15 +41,12 @@ body{
 .sidebar a:hover {
     color: brown;
 }
+
 .openbtn {
-    font-size: 20px;
     cursor: pointer;
-    background-color: transparent;
-    color: white;
     padding: 10px 15px;
     border: none;
-    position: absolute;
-    top:250px;
+   top: 290px;
 }
 
 .singer-box {
@@ -66,7 +54,6 @@ body{
     border: 1px solid #ee7690;
     font-size: 25px;
     cursor: pointer;
-    font-weight: 600;
 }
 .singer-info {
     display: none;
