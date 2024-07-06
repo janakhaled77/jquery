@@ -54,20 +54,28 @@ $('a[href^="#"]').on('click', function(event) {
         }, 1000);
     });
 
-    var maxChars = 100;
-    var $textarea = $('textarea');
-    var $charCount = $('#chars');
-    var $submitButton = $('#submit');
+    $(document).ready(function() {
+        var maxChars = 100;
+        var $textarea = $('textarea');
+        var $charCount = $('#chars');
+        var $remainingText = $('#remaining-text');
+        var $submitButton = $('#submit');
 
-    $textarea.on('input', function() {
-        var remaining = maxChars - $(this).val().length;
-        $charCount.text(remaining + ' characters remaining');
+        $textarea.on('input', function() {
+            var textLength = $(this).val().length;
+            var remaining = maxChars - textLength;
 
-        if (remaining < 0) {
-            $charCount.text("You have exceeded the character limit");
-            $submitButton.prop('disabled', true);
-        } else {
-            $submitButton.prop('disabled', false);
-        }
-    });
+            if (remaining < 0) {
+                $charCount.html('<span class="red-text">You have exceeded the character limit</span>');
+                $remainingText.hide();
+                $submitButton.prop('disabled', true);
+                $textarea.addClass('over-limit');
+            } else {
+                $charCount.html('<span class="black-text">' + remaining + '</span>');
+                $remainingText.show();
+                $submitButton.prop('disabled', false);
+                $textarea.removeClass('over-limit');
+            }
+        });
+    });
 });

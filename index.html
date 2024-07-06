@@ -20,12 +20,12 @@
             </div>
         </div>
     </div>
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a href="#home" target="_self">Home</a>
-        <a href="#duration" target="_self">Duration</a>
-        <a href="#details" target="_self">Details</a>
-        <a href="#contact" target="_self">Contact</a>
+    <div id="mySidebar" class="sidebar bg-black">
+        <a href="javascript:void(0)" class="closebtn fs-1" onclick="closeNav()">×</a>
+        <a href="#home" class="p-3" target="_self">Home</a>
+        <a href="#duration" class="p-3" target="_self">Duration</a>
+        <a href="#details" class="p-3" target="_self">Details</a>
+        <a href="#contact"  class="p-3" target="_self">Contact</a>
     </div>
 
     <button class="openbtn fs-3 bg-transparent text-white position-absolute" onclick="openNav()">☰ Open</button>
@@ -157,51 +157,40 @@
                 <h1 class=" fw-bold">Join Us</h1>
                 <p class="text-center p-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             </div>
-
             <div class="row">
-
                 <div class="col-md-6">
-
                     <div class="con-info">
-
                         <h4 class="fw-bold pb-3">CONTACT INFO</h4>
                         <p>Why you should hire me writeup Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                             Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque nascetur ridiculus mus.
-
                         </p>
-
                         <div class="icons text-center p-2">
                             <p><i class="fa fa-map-marker p-1"></i> New Street 22545, Nexa Road, New York City, USA</p>
-
                             <p><i class="fa fa-envelope p-1"></i> <span class="text-danger">hello@uigrid.com</span></p>
                             <p><i class="fa fa-phone p-1"></i> 001-000-000-000</p>
                         </div>
 
-
                         <div class="social-list p-5">
-
                             <i class="fab fa-twitter fa-fw circle m-2"></i>
                             <i class="fab fa-facebook-f fa-fw circle m-2"></i>
                             <i class="fab fa-instagram fa-fw circle m-2"></i>
                             <i class="fab fa-dribbble fa-fw circle m-2"></i>
                             <i class="fab fa-pinterest fa-fw circle m-2"></i>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="col-md-6">
-
                     <form>
-
                         <input class="form-control input-lg m-3" type="text" placeholder="Enter Name">
                         <input class="form-control input-lg m-3" type="email" placeholder="Enter Email">
                         <textarea class="form-control input-lg m-3" placeholder="Enter Message" spellcheck="false"></textarea>
                         <span id="chars" class="ms-3">
-                            100 character Reamining</span> 
+                            <span class="black-text">100</span>
+                        </span>
+                        <span id="remaining-text" class="ms-1">character remaining</span>
                     </form>
+    
                     <button class="btn bg-danger text-white m-3">Send Message</button>
 
                 </div>
