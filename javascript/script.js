@@ -17,15 +17,18 @@ $(document).ready(function() {
             infoBox.slideDown();
         }
     });
-    $('a[href^="#"]').on('click', function(event) {
-        event.preventDefault();
-        var target = $($(this).attr('href'));
-        if (target.length) { 
+     
+$('a[href^="#"]').on('click', function(event) {
+    event.preventDefault();
+            var target = $($(this).attr('href'));
+            if (target.length){
             $('html, body').animate({
                 scrollTop: target.offset().top
-            }, 2000);
-        }
+            }, 3000
+            );
+}
     });
+
 
 
     $(document).ready(function() {
